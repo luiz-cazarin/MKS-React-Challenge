@@ -1,0 +1,118 @@
+.minNavBar {
+  position: fixed;
+  background-color: #0f52ba;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: black;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0px;
+  transition: 0.2s;
+}
+
+.navBar {
+  position: fixed;
+  background-color: #0f52ba;
+  box-shadow: -5px 5px 5px rgba(0, 0, 0, 0.3);
+  color: white;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 460px;
+  transition: 0.2s;
+}
+
+.headerNavBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 40px;
+  right: 0;
+  left: 0;
+}
+
+.h1 {
+  font-size: 27px;
+  width: 180px;
+}
+
+.iconClose {
+  width: 23px;
+  height: 23px;
+  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  border-radius: 150px;
+  cursor: pointer;
+}
+
+.bodyNavBar {
+  color: black;
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  row-gap: 1rem;
+  overflow-y: auto;
+  max-height: 60%;
+}
+
+/* footer */
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 160px;
+  width: 100%;
+}
+
+.boxTotalPrice {
+  margin: 10px 40px 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 28px;
+  font-weight: 700;
+}
+
+.buttonFinishOrder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 97px;
+  font-size: 28px;
+  font-weight: 700;
+  background-color: black;
+  display: flex;
+  align-items: center;
+}
+
+.textButton {
+  margin: auto;
+}
+
+@media screen and (max-height: 900px) {
+  .bodyNavBar {
+    height: calc(100% - 350px);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .navBar {
+    width: 90%;
+  }
+  .headerNavBar {
+    margin: 10px 20px;
+  }
+  .h1 {
+    font-size: 22px;
+  }
+  .bodyNavBar {
+    height: 60%;
+  }
+  .buttonFinishOrder {
+    height: 87px;
+    font-size: 22px;
+    font-weight: 700;
+  }
+}

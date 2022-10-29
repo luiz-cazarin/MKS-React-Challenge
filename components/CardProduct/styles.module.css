@@ -1,0 +1,94 @@
+.cardProduct {
+  background-color: white;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+  height: 285px;
+  height: 285px;
+  width: 217px;
+  border-radius: 8px;
+  display: grid;
+}
+
+.boxImg {
+  height: 138px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.photo {
+  border-radius: 8px 8px 0px 0px;
+  max-height: 138px;
+  display: block;
+  object-fit: scale-down;
+}
+
+.box {
+  padding: 0px 8px;
+}
+
+.containerNamePrice {
+  display: flex;
+  align-items: center;
+}
+
+.footerButton {
+  background: #0f52ba;
+  border-radius: 0px 0px 8px 8px;
+  display: flex;
+  height: 32px;
+  width: 100%;
+  align-self: flex-end;
+  cursor: pointer;
+}
+
+.containerBuy {
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-width: 90px;
+}
+
+.nameProduct {
+  max-width: 124px;
+}
+
+.price {
+  background-color: rgba(55, 55, 55, 1);
+  border-radius: 5px;
+  color: white;
+  padding: 5px;
+  width: 110px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 11px;
+}
+
+.product__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .product__container {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .product__container {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .product__container {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

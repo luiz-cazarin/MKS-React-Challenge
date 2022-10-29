@@ -1,0 +1,55 @@
+.img {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.cardList {
+  background-color: white;
+  height: 79px;
+  width: 379px;
+  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 8px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  align-items: center;
+  font-size: 14px;
+}
+
+.nameProductList {
+  width: 124px;
+  font-weight: 400;
+}
+
+.count {
+  border: 1px solid rgba(191, 191, 191, 1);
+  border-radius: 4px;
+  width: 50px;
+  padding: 5px;
+  display: flex;
+  justify-content: space-evenly;
+  cursor: pointer;
+}
+
+.priceList {
+  font-weight: bold;
+}
+
+@media screen and (max-width: 600px) {
+  .cardList {
+    height: auto;
+    border-radius: 8px;
+    padding: 0.2rem;
+    font-size: 12px;
+    width: 97%;
+  }
+
+  .nameProductList {
+    width: 70px;
+  }
+
+  .count {
+    width: 40px;
+  }
+}
