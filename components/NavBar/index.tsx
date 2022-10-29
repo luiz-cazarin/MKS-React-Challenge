@@ -3,23 +3,17 @@ import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import CardProductList from "../CardProductList";
 import { useEffect, useState } from "react";
 
-export default function NavBar({
-  closeDialog,
-  dialog,
-  productsCart,
-  removeProduct,
-  finishOrder,
-}) {
+export default function NavBar({ closeDialog, dialog, productsCart, removeProduct, finishOrder }: any) {
   const [total, setTotal] = useState(0);
 
-  function removeProductOnCart(payload) {
+  function removeProductOnCart(payload: any) {
     removeProduct(payload);
   }
 
   useEffect(() => {
     let total = 0;
-    productsCart.forEach((element) => {
-      total += parseFloat(element.price, 10);
+    productsCart.forEach((element: any) => {
+      total += parseFloat(element.price);
     });
     console.log(productsCart);
     setTotal(total);
@@ -34,7 +28,7 @@ export default function NavBar({
         </div>
       </div>
       <div className={styles.bodyNavBar}>
-        {productsCart.map((product, key) => (
+        {productsCart.map((product: any, key: any) => (
           <>
             <CardProductList
               data={product}
