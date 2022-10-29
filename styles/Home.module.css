@@ -179,7 +179,7 @@
   right: 0;
   height: 100vh;
   width: 0px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .navBar {
@@ -191,7 +191,7 @@
   height: calc(100vh - 90px);
   width: 460px;
   padding: 47px;
-  transition: .5s;
+  transition: 0.5s;
 }
 
 .headerNavBar {

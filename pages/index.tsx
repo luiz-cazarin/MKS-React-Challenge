@@ -14,6 +14,7 @@ export default function Home() {
   const [productsCart, setProductsCart] = useState<any>([]);
   const [data, setData] = useState([]);
   const [dialog, setDialog] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -26,12 +27,15 @@ export default function Home() {
       .catch((err) => {
         console.log(err);
       });
+    setLoading(false);
   }, []);
 
   function addProduct(payload: any) {
     let val = productsCart.find((el: any) => el.id === payload.id);
     if (!val) {
       setProductsCart((prevArray: any) => [...productsCart, payload]);
+    } else {
+      setDialog(true);
     }
   }
 
@@ -60,15 +64,19 @@ export default function Home() {
           <div>{productsCart.length}</div>
         </div>
       </header>
-      <div className={styles.bodyProducts}>
-        <div className={styles.product__container}>
-          {data.map((product, key) => (
-            <>
-              <CardProduct product={product} addProduct={addProduct} />
-            </>
-          ))}
+      {loading ? (
+        <div className={styles.bodyProducts}>Loading...</div>
+      ) : (
+        <div className={styles.bodyProducts}>
+          <div className={styles.product__container}>
+            {data.map((product, key) => (
+              <>
+                <CardProduct product={product} addProduct={addProduct} />
+              </>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <NavBar
         closeDialog={() => setDialog(false)}
         dialog={dialog}
