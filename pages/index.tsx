@@ -11,7 +11,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 
 export default function Home() {
-  const [productsCart, setProductsCart] = useState([]);
+  const [productsCart, setProductsCart] = useState<any>([]);
   const [data, setData] = useState([]);
   const [dialog, setDialog] = useState(false);
 
@@ -31,7 +31,7 @@ export default function Home() {
   function addProduct(payload: any) {
     let val = productsCart.find((el: any) => el.id === payload.id);
     if (!val) {
-      setProductsCart([...productsCart, { ...payload }]);
+      setProductsCart((prevArray: any) => [...productsCart, payload]);
     }
   }
 

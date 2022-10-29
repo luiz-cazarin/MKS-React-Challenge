@@ -5,7 +5,7 @@ import Image from "next/image";
 export default function CardProductList({ data, removeProductOnCart }: any) {
   const [amout, setAmout] = useState(1);
   useEffect(() => {
-    data.valorSomado = parseFloat(data.price) * amout;
+    data.finalValue = parseFloat(data.price) * amout;
   }, [amout, data]);
   return (
     <div className={styles.cardList}>
