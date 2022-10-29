@@ -29,14 +29,14 @@ export default function Home() {
   }, []);
 
   function addProduct(payload: any) {
-    let val = productsCart.find((el) => el?.id === payload.id);
+    let val = productsCart.find((el: any) => el.id === payload.id);
     if (!val) {
       setProductsCart([...productsCart, { ...payload }]);
     }
   }
 
   function removeProduct(payload: any) {
-    let newList = productsCart.filter((el) => el.id !== payload.id);
+    let newList = productsCart.filter((el: any) => el.id !== payload.id);
     setProductsCart(newList);
   }
 
