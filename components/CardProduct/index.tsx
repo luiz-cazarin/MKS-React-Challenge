@@ -11,10 +11,10 @@ export function CardProduct({ product, addProduct }: any) {
         </div>
         <div className={styles.box}>
           <div className={styles.containerNamePrice}>
-            <div className={styles.nameProduct}>Apple Watch Series 4 GPS</div>
-            <div className={styles.price}>R$ {parseFloat(product.price)}</div>
+            <div className={styles.nameProduct}>{product.name}</div>
+            <div className={styles.price}>R$ {parseFloat(product.id).toFixed(2)}</div>
           </div>
-          <div className={styles.description}>{product.description}</div>
+          <div className={styles.description}>{product.model}</div>
         </div>
         <div
           className={styles.footerButton}

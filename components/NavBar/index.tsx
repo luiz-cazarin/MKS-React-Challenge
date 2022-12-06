@@ -15,7 +15,6 @@ export default function NavBar({ closeDialog, dialog, productsCart, removeProduc
     productsCart.forEach((element: any) => {
       total += parseFloat(element.price);
     });
-    console.log(productsCart);
     setTotal(total);
   }, [productsCart]);
 

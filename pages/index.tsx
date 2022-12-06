@@ -17,12 +17,11 @@ export default function Home() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    // set api url
     axios
-      .get(
-        "https://mks-frontend-challenge-api.herokuapp.com/api/v1/products?page=1&rows=10&sortBy=id&orderBy=ASC"
-      )
+      .get("http://localhost:5000/vehicles")
       .then((res) => {
-        setData(res.data.products);
+        setData(res.data.vehicles);
       })
       .catch((err) => {
         console.log(err);
@@ -45,20 +44,13 @@ export default function Home() {
   }
 
   function finishOrder() {
-    console.log(productsCart);
+    // console.log(productsCart);
   }
 
   return (
     <div>
       <header className={styles.header}>
-        <div className={styles.headerBoxLogo}>
-          <div className={styles.logo}>
-            <Image src={logo} alt="logo"></Image>
-          </div>
-          <div className={styles.text}>
-            <Image src={text} alt="text"></Image>
-          </div>
-        </div>
+        <div className={styles.headerBoxLogo}>{/* logo */}</div>
         <div className={styles.orders} onClick={() => setDialog(true)}>
           <ShoppingCartIcon className={styles.icon} />
           <div>{productsCart.length}</div>
